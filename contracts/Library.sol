@@ -52,10 +52,12 @@ library ArrayLib {
 }
 
 contract TestArray {
+    // You can also enhance a state variable data type by the following:
+    using ArrayLib for uint[];
     uint[] public arr = [3,2,1];
 
-    // find the index of 2 stored inside the array --> should be 1
+    // find the index of 2 stored inside the array --> should return 1
     function testFind() external view returns (uint i) {
-        return ArrayLib.find(arr, 2);
+        return arr.find(2);
     }
 }
